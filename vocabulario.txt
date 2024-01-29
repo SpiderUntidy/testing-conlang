@@ -1,0 +1,24 @@
+ane None None ir
+fa None None vento
+fasi None None fogo
+fusha None None água
+ira None None dar (a mim)
+kataka None None crescer
+ki None None ver, perceber, encontrar
+kimu None None pessoa, humano, indivíduo
+kipa None None pedra, solo
+mekepa None None comida, carne, animal
+mene None None descansar
+mu None None eu
+na None None querer
+pa None None tu
+paka None None pegar, tomar
+ritaki None None acabar, diminuir, morrer
+ru None None mandar
+shasha None None encher
+she None None sol
+ta None None ele(a)
+tike None None árvore
+shusa None None lugar
+ripari None None caçar
+pifi None None coisa
