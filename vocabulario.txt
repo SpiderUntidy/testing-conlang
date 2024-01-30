@@ -22,3 +22,12 @@ tike None None árvore
 shusa None None lugar
 ripari None None caçar
 pifi None None coisa
+tike-shusa tike shusa floresta
+fasi-shusa fasi shusa fogueira
+she-paka paka she bronzear
+fusha-mekepa fusha mekepa peixe
+fusha-mekepa-ripari ripari fusha-mekepa pescar
+ripari-kimu kimu ripari caçador
+ripari-pifi ripari pifi caça
+ane-shusa ane shusa caminho
+fusha-ane-shusa fusha ane-shusa rio

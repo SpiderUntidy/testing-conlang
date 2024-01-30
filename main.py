@@ -56,11 +56,25 @@ def comandos(vocab):
         print(f"\n{len(vocab)} palavras encontradas\n")
         for palavra in vocab:
             print(f"{palavra[0]}: {palavra[1]}")
-            print()
+        print()
     elif option == '2':
-        pass
+        in_word = WordTree(word=input("Insira a palavra: "))
+        in_signif = input("Insira seu significado: ")
+
+        vocab.append((in_word, in_signif))
+        print()
     elif option == '3':
-        pass
+        in_parents = input("Insira as palavras-pai (em ordem de derivação, separadas por espaço): ")
+        deriv_signif = input("Insira o significado derivado: ")
+
+        sep_parents = in_parents.split(' ')
+        true_parents = [word[0] for word in vocab if str(word[0]) in sep_parents]
+        if len(true_parents) == 2:
+            deriv = WordTree(word='-'.join(sep_parents), parents=true_parents)
+            vocab.append((deriv, deriv_signif))
+        else:
+            print("Palavras não contidas no vocabulário.")
+        print()
     else:
         print("Comando inválido.")
 
