@@ -1,33 +1,37 @@
 ane None None ir
+ane-shusa ane shusa caminho
 fa None None vento
+fa-ripari fa ripari inútil
 fasi None None fogo
+fasi-shusa fasi shusa fogueira
 fusha None None água
+fusha-ane-shusa fusha ane-shusa rio
+fusha-mekepa fusha mekepa peixe
+fusha-mekepa-ripari ripari fusha-mekepa pescar
 ira None None dar (a mim)
 kataka None None crescer
 ki None None ver, perceber, encontrar
 kimu None None pessoa, humano, indivíduo
 kipa None None pedra, solo
+mani None None nascente, início
 mekepa None None comida, carne, animal
 mene None None descansar
 mu None None eu
 na None None querer
 pa None None tu
 paka None None pegar, tomar
+pifi None None coisa
+ripari None None caçar
+ripari-kimu kimu ripari caçador
+ripari-pifi ripari pifi caça
 ritaki None None acabar, diminuir, morrer
 ru None None mandar
 shasha None None encher
 she None None sol
+she-paka paka she bronzear
+shusa None None lugar
+si None None rio
+sufu None None foz, fim
 ta None None ele(a)
 tike None None árvore
-shusa None None lugar
-ripari None None caçar
-pifi None None coisa
 tike-shusa tike shusa floresta
-fasi-shusa fasi shusa fogueira
-she-paka paka she bronzear
-fusha-mekepa fusha mekepa peixe
-fusha-mekepa-ripari ripari fusha-mekepa pescar
-ripari-kimu kimu ripari caçador
-ripari-pifi ripari pifi caça
-ane-shusa ane shusa caminho
-fusha-ane-shusa fusha ane-shusa rio

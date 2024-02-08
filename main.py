@@ -26,6 +26,14 @@ def ler_vocab(path):
     return vocab
 
 
+def ler_fonemas(path):
+    """Ler arquivo de fonemas."""
+    with open(path, 'r', encoding='utf-8') as reader:
+        fonemas = reader.read()
+    
+    return fonemas
+
+
 def escrever_vocab(vocab, path):
     """Gravar vocabulário a um arquivo."""
     with open(path, 'w', encoding='utf-8') as writer:
@@ -34,59 +42,93 @@ def escrever_vocab(vocab, path):
             partes = [orig, orig.left, orig.right, signif]
             line = " ".join(map(str, partes))
             lines.append(line + '\n')
-        writer.writelines(lines)
+        writer.writelines(sorted(lines))
 
 
-def print_options():
-    """Exibe as opções de comando."""
-    print("1 - exibir vocabulário")
-    print("2 - adicionar palavra raíz")
-    print("3 - compor palavra derivada")
-    print("0 - sair")
-    print()
+def format_vocab(vocab):
+    """Formata o vocabulário."""
+    f_vocab = []
+
+    f_vocab.append(f"\n{len(vocab)} palavras encontradas\n")
+    for palavra in vocab:
+        f_vocab.append(f"\n{palavra[0]}: {palavra[1]}")
+    f_vocab.append("\n")
+
+    return ''.join(f_vocab)
 
 
-def comandos(vocab):
+def add_root(word, signif, vocab):
+    """Adiciona uma palavra primitiva ao vocabulário."""
+    new_word = [(WordTree(word), signif)]
+    new_vocab = vocab + new_word
+    
+    return new_vocab
+
+
+def fazer_deriv(parents, signif, vocab):
+    """Adiciona uma palavra derivada de outras duas preexistentes ao vocabulário."""
+    sep_parents = parents.split(' ')
+    true_parents = [word[0] for word in vocab if str(word[0]) in sep_parents]
+    if len(true_parents) == 2:
+        deriv = WordTree(word='-'.join(sep_parents), parents=true_parents)
+        new_word = [(deriv, signif)]
+        new_vocab = vocab + new_word
+    else:
+        raise Exception("Palavras não contidas no vocabulário.")
+    
+    return new_vocab
+
+
+def comandos(vocab, fonemas):
     """Enclausura os comandos definidos."""
     option = input("Insira seu comando: ")
+    print()
 
     if option == '0':
         return 0
     elif option == '1':
-        print(f"\n{len(vocab)} palavras encontradas\n")
-        for palavra in vocab:
-            print(f"{palavra[0]}: {palavra[1]}")
-        print()
+        print(format_vocab(vocab))
     elif option == '2':
-        in_word = WordTree(word=input("Insira a palavra: "))
-        in_signif = input("Insira seu significado: ")
-
-        vocab.append((in_word, in_signif))
-        print()
+        print(fonemas)
     elif option == '3':
+        in_word = input("Insira a palavra: ")
+        in_signif = input("Insira seu significado: ")
+        vocab = add_root(in_word, in_signif, vocab)
+    elif option == '4':
         in_parents = input("Insira as palavras-pai (em ordem de derivação, separadas por espaço): ")
         deriv_signif = input("Insira o significado derivado: ")
-
-        sep_parents = in_parents.split(' ')
-        true_parents = [word[0] for word in vocab if str(word[0]) in sep_parents]
-        if len(true_parents) == 2:
-            deriv = WordTree(word='-'.join(sep_parents), parents=true_parents)
-            vocab.append((deriv, deriv_signif))
-        else:
-            print("Palavras não contidas no vocabulário.")
-        print()
+        vocab = fazer_deriv(in_parents, deriv_signif, vocab)
     else:
         print("Comando inválido.")
 
-    return True
+    return vocab
 
 
-if __name__ == '__main__':
-    vocabulario = ler_vocab('vocabulario.txt')  # Lê o vocabulário, definindo sua tree
+if __name__ == "__main__":
+    # Lê o vocabulário, definindo sua tree
+    vocabulario = ler_vocab("vocabulario.txt")
+    fonemas = ler_fonemas("fonemas.txt")
+
+    options = [
+        "1 - exibir vocabulário",
+        "2 - exibir fonemas",
+        "3 - adicionar palavra primitiva",
+        "4 - compor palavra derivada",
+        "0 - sair"
+    ]
 
     while True:
-        print_options()  # Exibe os comandos possíveis
-        if comandos(vocabulario) == 0:  # Executa os comandos
-            break
+        # Exibe os comandos possíveis
+        print('\n', *options, '\n', sep='\n')
 
-    escrever_vocab(vocabulario, 'vocabulario.txt')  # Por fim grava o vocabulário
+        # Chama a função de comandos
+        v_comando = comandos(vocabulario, fonemas)
+
+        # Interrompe caso o comando seja 0
+        if v_comando == 0:
+            break
+        # Do contrário atualiza o vocabulário
+        vocabulario = v_comando
+
+    # Por fim grava o vocabulário
+    escrever_vocab(vocabulario, "vocabulario.txt")
