@@ -1,5 +1,7 @@
 ane None None ir
+ane-pifi ane pifi destino
 ane-shusa ane shusa caminho
+au None None sim
 fa None None vento
 fa-ripari fa ripari inútil
 fasi None None fogo
