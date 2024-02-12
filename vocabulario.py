@@ -59,7 +59,11 @@ class Vocabulario:
 
     def write_words(self):
         """Grava o vocabulário."""
-        encoder = lambda word: vars(word)
+        encoder = lambda word: {
+            "word": word.word,
+            "signif": word.signif,
+            "parents": [str(parent) if parent is not None else None for parent in word.parents]
+        }
         with open(self.path_words, 'w', encoding='utf-8') as file:
             s_words = dict(sorted(self.words.items()))
             json.dump(s_words, file, ensure_ascii=False, indent=4, default=encoder)
@@ -108,4 +112,4 @@ class Vocabulario:
 
 
 v = Vocabulario("words.json", "sounds.txt")
-v.print_words()
+v.write_words()
