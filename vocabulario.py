@@ -16,23 +16,24 @@ def ler_words(path):
             actual_level = []
             read_divided[count] = []
             for w in list(read.keys()):
+                
                 if all(parent in prev_words for parent in read[w]["parents"]):
                     actual_level.append(read[w]["word"])
                     read_divided[count].append((w, read[w]))
                     del read[w]
             prev_words += actual_level
             count += 1
-        
+
         for _, level in read_divided.items():
             for w, word in level:
                 parents = []
                 for parent in word["parents"]:
                     if parent in words:
-                        parents.append(parent)
+                        parents.append(words[parent])
                     else:
                         parents.append(None)
                 words[w] = WordTree(word["word"], word["signif"], parents)
-
+    print()
     return words
 
 
