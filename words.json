@@ -39,6 +39,16 @@
             "shusa"
         ]
     },
+    "ari": {
+        "word": "ari",
+        "signif": [
+            "olho"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
     "au": {
         "word": "au",
         "signif": [
@@ -224,6 +234,16 @@
         "parents": [
             null,
             null
+        ]
+    },
+    "mani-kimu": {
+        "word": "mani-kimu",
+        "signif": [
+            "criança"
+        ],
+        "parents": [
+            "kimu",
+            "mani"
         ]
     },
     "mekepa": {

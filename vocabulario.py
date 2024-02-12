@@ -67,7 +67,7 @@ class Vocabulario:
         with open(self.path_words, 'w', encoding='utf-8') as file:
             s_words = dict(sorted(self.words.items()))
             json.dump(s_words, file, ensure_ascii=False, indent=4, default=encoder)
-        
+  
 
     def print_words(self):
         """Exibe as palavras do vocabulário."""
@@ -75,13 +75,13 @@ class Vocabulario:
         for palavra in self.words.values():
             print(f"{palavra}: {', '.join(palavra.signif)}")
         print()
-    
+
 
     def print_fonemas(self):
         """Exibe os fonemas do vocabulário."""
         print(self.sounds)
 
-    
+
     def add_primit(self):
         """Adiciona uma palavra primitiva ao vocabulário."""
 
@@ -93,7 +93,7 @@ class Vocabulario:
             new_word = WordTree(word, signif)
             self.words[word] = new_word
 
-    
+
     def add_comp(self):
         """Adiciona uma palavra derivada de outras duas preexistentes no vocabulário."""
 
@@ -105,11 +105,7 @@ class Vocabulario:
         comp = '-'.join(sep_parents)
 
         if len(true_parents) == 2 and not comp in self.words.keys():
-            new_word = WordTree(comp, signif, parents=list(map(str, true_parents)))
+            new_word = WordTree(comp, signif, parents=true_parents)
             self.words[comp] = new_word
         else:
             print("Erro na composição.")
-
-
-v = Vocabulario("words.json", "sounds.txt")
-v.write_words()
