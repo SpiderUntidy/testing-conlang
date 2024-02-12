@@ -1,3 +1,3 @@
-vogais: a e i u
-consoantes: p t k f s sh m n r y w
-sílabas: vogal + consoante
+vogal: a e i u
+consoante: p t k f s sh m n r y w
+sílaba: vogal + consoante

@@ -1,0 +1,445 @@
+{
+    "akishu": {
+        "word": "akishu",
+        "signif": [
+            "lobo"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "ane": {
+        "word": "ane",
+        "signif": [
+            "ir"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "ane-pifi": {
+        "word": "ane-pifi",
+        "signif": [
+            "destino"
+        ],
+        "parents": [
+            "ane",
+            "pifi"
+        ]
+    },
+    "ane-shusa": {
+        "word": "ane-shusa",
+        "signif": [
+            "caminho"
+        ],
+        "parents": [
+            "ane",
+            "shusa"
+        ]
+    },
+    "au": {
+        "word": "au",
+        "signif": [
+            "sim"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "fa": {
+        "word": "fa",
+        "signif": [
+            "vento"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "fa-ripari": {
+        "word": "fa-ripari",
+        "signif": [
+            "inútil"
+        ],
+        "parents": [
+            "fa",
+            "ripari"
+        ]
+    },
+    "fasi": {
+        "word": "fasi",
+        "signif": [
+            "fogo"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "fasi-ka": {
+        "word": "fasi-ka",
+        "signif": [
+            "calor"
+        ],
+        "parents": [
+            "fasi",
+            "ka"
+        ]
+    },
+    "fasi-shusa": {
+        "word": "fasi-shusa",
+        "signif": [
+            "fogueira"
+        ],
+        "parents": [
+            "fasi",
+            "shusa"
+        ]
+    },
+    "fusha": {
+        "word": "fusha",
+        "signif": [
+            "água"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "fusha-ane-shusa": {
+        "word": "fusha-ane-shusa",
+        "signif": [
+            "rio"
+        ],
+        "parents": [
+            "fusha",
+            "ane-shusa"
+        ]
+    },
+    "fusha-mekepa": {
+        "word": "fusha-mekepa",
+        "signif": [
+            "peixe"
+        ],
+        "parents": [
+            "fusha",
+            "mekepa"
+        ]
+    },
+    "fusha-mekepa-ripari": {
+        "word": "fusha-mekepa-ripari",
+        "signif": [
+            "pescar"
+        ],
+        "parents": [
+            "ripari",
+            "fusha-mekepa"
+        ]
+    },
+    "ime": {
+        "word": "ime",
+        "signif": [
+            "mão"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "ira": {
+        "word": "ira",
+        "signif": [
+            "dar (a mim)"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "ka": {
+        "word": "ka",
+        "signif": [
+            "corpo",
+            "estrutura"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "kataka": {
+        "word": "kataka",
+        "signif": [
+            "crescer"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "ki": {
+        "word": "ki",
+        "signif": [
+            "ver",
+            "perceber",
+            "encontrar"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "kimu": {
+        "word": "kimu",
+        "signif": [
+            "pessoa",
+            "humano",
+            "indivíduo"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "kipa": {
+        "word": "kipa",
+        "signif": [
+            "pedra",
+            "solo"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "mani": {
+        "word": "mani",
+        "signif": [
+            "nascente",
+            "início"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "mekepa": {
+        "word": "mekepa",
+        "signif": [
+            "comida",
+            "carne",
+            "animal"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "mene": {
+        "word": "mene",
+        "signif": [
+            "descansar"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "mu": {
+        "word": "mu",
+        "signif": [
+            "eu"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "na": {
+        "word": "na",
+        "signif": [
+            "querer"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "pa": {
+        "word": "pa",
+        "signif": [
+            "tu"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "paka": {
+        "word": "paka",
+        "signif": [
+            "pegar",
+            "tomar"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "pifi": {
+        "word": "pifi",
+        "signif": [
+            "coisa"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "ripari": {
+        "word": "ripari",
+        "signif": [
+            "caçar"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "ripari-kimu": {
+        "word": "ripari-kimu",
+        "signif": [
+            "caçador"
+        ],
+        "parents": [
+            "kimu",
+            "ripari"
+        ]
+    },
+    "ripari-pifi": {
+        "word": "ripari-pifi",
+        "signif": [
+            "caça"
+        ],
+        "parents": [
+            "ripari",
+            "pifi"
+        ]
+    },
+    "ritaki": {
+        "word": "ritaki",
+        "signif": [
+            "acabar",
+            "diminuir",
+            "morrer"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "ru": {
+        "word": "ru",
+        "signif": [
+            "mandar"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "shasha": {
+        "word": "shasha",
+        "signif": [
+            "encher"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "she": {
+        "word": "she",
+        "signif": [
+            "sol"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "she-paka": {
+        "word": "she-paka",
+        "signif": [
+            "bronzear"
+        ],
+        "parents": [
+            "paka",
+            "she"
+        ]
+    },
+    "shusa": {
+        "word": "shusa",
+        "signif": [
+            "lugar"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "si": {
+        "word": "si",
+        "signif": [
+            "rio"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "sufu": {
+        "word": "sufu",
+        "signif": [
+            "foz",
+            "fim"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "ta": {
+        "word": "ta",
+        "signif": [
+            "ele(a)"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "tike": {
+        "word": "tike",
+        "signif": [
+            "árvore"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
+    "tike-shusa": {
+        "word": "tike-shusa",
+        "signif": [
+            "floresta"
+        ],
+        "parents": [
+            "tike",
+            "shusa"
+        ]
+    }
+}

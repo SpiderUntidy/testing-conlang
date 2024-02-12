@@ -3,7 +3,7 @@ from vocabulario import Vocabulario
 
 if __name__ == "__main__":
     # Lê o vocabulário, definindo seu objeto
-    vocabulario = Vocabulario("vocabulario.txt", "fonemas.txt")
+    vocabulario = Vocabulario("words.txt", "sounds.txt")
 
     # Define os comandos possíveis
     options = [
@@ -15,7 +15,7 @@ if __name__ == "__main__":
     ]
 
     command_list = {
-        1: vocabulario.print_vocab,
+        1: vocabulario.print_words,
         2: vocabulario.print_fonemas,
         3: vocabulario.add_primit,
         4: vocabulario.add_comp,
@@ -41,4 +41,4 @@ if __name__ == "__main__":
             print("Comando inválido.")
 
     # Por fim grava o vocabulário
-    vocabulario.write_vocab()
+    vocabulario.write_words()
