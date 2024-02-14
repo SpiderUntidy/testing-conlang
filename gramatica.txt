@@ -1,3 +1,33 @@
+--- forma das sílabas ---
+
 vogal: a e i u
 consoante: p t k f s sh m n r y w
-sílaba: vogal + consoante
+sílaba: consoante + vogal
+acento tônico: /...:'_:_:_/ ou /...:'_/
+
+--- sintaxe ---
+
+expressão verbal padrão: sujeito + objeto + verbo
+expressão nominal: adjetivo + substantivo
+expressão de posse: possuidor + possuído
+
+--- conjugações verbais ---
+
+presente: verbo
+futuro: verbo + na (querer)
+pretérito perfeito: verbo + ritaki (acabar)
+pretérito imperfeito: verbo*
+
+voz passiva: verbo + paka (tomar)
+voz causativa: verbo + ru (mandar)
+
+--- mudanças ---
+
+kataka -> grande
+mene -> adjetivo -> preposição
+shasha -> muito -> plural
+
+-shusa -> lugar
+-kimu -> pessoa, agente
+-pifi -> objeto
+-ka -> substância

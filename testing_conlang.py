@@ -3,7 +3,7 @@ from vocabulario import Vocabulario
 
 if __name__ == "__main__":
     # Lê o vocabulário, definindo seu objeto
-    vocabulario = Vocabulario("words.txt", "sounds.txt")
+    vocabulario = Vocabulario("words.json", "sounds.txt")
 
     # Define os comandos possíveis
     options = [
@@ -11,6 +11,7 @@ if __name__ == "__main__":
         "2 - exibir fonemas",
         "3 - adicionar palavra primitiva",
         "4 - compor palavra derivada",
+        "5 - remover palavra",
         "0 - sair"
     ]
 
@@ -19,6 +20,7 @@ if __name__ == "__main__":
         2: vocabulario.print_fonemas,
         3: vocabulario.add_primit,
         4: vocabulario.add_comp,
+        5: vocabulario.del_word,
         0: 0
     }
 
@@ -36,7 +38,7 @@ if __name__ == "__main__":
                 break
             else:
                 comando()
-        except:
+        except IndexError:
             # Em caso de erro, apenas printar na tela e retornar ao loop
             print("Comando inválido.")
 

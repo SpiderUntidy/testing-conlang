@@ -10,13 +10,19 @@ def ler_words(path):
 
         read_divided = {}
         prev_words = [None]
-        
+
+        """
+        Dividem-se as palavras com base em seus parents.
+        Sem parents (primitiva) -> nível 0
+        Ambos os parents nível 0 -> nível 1
+        Algum parent nível n -> nível n + 1
+        """
+
         count = 0
         while read.items():
             actual_level = []
             read_divided[count] = []
             for w in list(read.keys()):
-                
                 if all(parent in prev_words for parent in read[w]["parents"]):
                     actual_level.append(read[w]["word"])
                     read_divided[count].append((w, read[w]))
@@ -24,6 +30,7 @@ def ler_words(path):
             prev_words += actual_level
             count += 1
 
+        # A WordTree é montada seguindo sequencialmente os níveis
         for _, level in read_divided.items():
             for w, word in level:
                 parents = []
@@ -33,15 +40,15 @@ def ler_words(path):
                     else:
                         parents.append(None)
                 words[w] = WordTree(word["word"], word["signif"], parents)
-    print()
-    return words
+ 
+    return dict(sorted(words.items()))
 
 
 def ler_fonemas(path):
     """Recebe o path de um arquivo de fonemas e retorna seu texto."""
     with open(path, 'r', encoding='utf-8') as reader:
         fonemas = reader.read()
-        
+
     return fonemas
 
 
@@ -52,7 +59,7 @@ class Vocabulario:
         """Lê os arquivos de palavras e fonemas para inicializar nosso vocabulário."""
         self.path_words = path_words
         self.path_sounds = path_sounds
-        
+
         self.words = ler_words(self.path_words)
         self.sounds = ler_fonemas(self.path_sounds)
 
@@ -60,12 +67,18 @@ class Vocabulario:
     def write_words(self):
         """Grava o vocabulário."""
 
+        # Função que codifica o objetos WordTree para o formato JSON
         encoder = lambda word: {
             "word": word.word,
             "signif": word.signif,
             "parents": [str(parent) if parent is not None else None for parent in word.parents]
         }
-        
+
+        """
+        Para evitar perda de dados em caso de erros de execução,
+        O arquivo é salvo na variável backup, que é utilizada pelo exception handler caso necessário.
+        """
+
         with open(self.path_words, 'r', encoding='utf-8') as file:
             backup = json.load(file)
 
@@ -109,7 +122,7 @@ class Vocabulario:
 
         parents = input("Insira as palavras-pai (na ordem da composição, separadas por espaço): ")
         signif = input("Insira o significado derivado: ").split(", ")
-        
+
         sep_parents = parents.split(' ')
         true_parents = [word for word in self.words if str(word) in sep_parents]
         comp = '-'.join(sep_parents)
@@ -119,3 +132,9 @@ class Vocabulario:
             self.words[comp] = new_word
         else:
             print("Erro na composição.")
+
+
+    def del_word(self):
+        """Deleta uma palavra."""
+        word = input("Insira a palavra a ser excluída: ")
+        del self.words[word]

@@ -421,6 +421,16 @@
             null
         ]
     },
+    "si-ripari": {
+        "word": "si-ripari",
+        "signif": [
+            "pescar"
+        ],
+        "parents": [
+            "ripari",
+            "si"
+        ]
+    },
     "sufu": {
         "word": "sufu",
         "signif": [
