@@ -1,6 +1,6 @@
 class WordTree:
     """Um tree node de palavras."""
-    def __init__(self, word=None, signif=None, parents=(None, None)):
+    def __init__(self, word: str, signif: str, parents: tuple["WordTree", "WordTree"] = (None, None)):
         self.word = word
         self.signif = signif
         self.parents = parents
@@ -32,4 +32,3 @@ class WordTree:
         
         for _, gen in self.__to_print.items():
             print(*gen, sep=" ")
-

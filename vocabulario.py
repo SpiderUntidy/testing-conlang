@@ -2,7 +2,7 @@ from word_tree import WordTree
 import json
 
 
-def ler_words(path):
+def ler_words(path: str) -> dict[str, "WordTree"]:
     """Recebe o path de um arquivo de palavras e retorna seu WordTree."""
     with open(path) as file:
         read = json.load(file)
@@ -40,11 +40,12 @@ def ler_words(path):
                     else:
                         parents.append(None)
                 words[w] = WordTree(word["word"], word["signif"], parents)
- 
-    return dict(sorted(words.items()))
+    
+    words = dict(sorted(words.items()))
+    return words
 
 
-def ler_fonemas(path):
+def ler_fonemas(path: str):
     """Recebe o path de um arquivo de fonemas e retorna seu texto."""
     with open(path, 'r', encoding='utf-8') as reader:
         fonemas = reader.read()
@@ -55,7 +56,7 @@ def ler_fonemas(path):
 class Vocabulario:
     """Classe que representa nosso vocabulário."""
 
-    def __init__(self, path_words, path_sounds):
+    def __init__(self, path_words: str, path_sounds: str):
         """Lê os arquivos de palavras e fonemas para inicializar nosso vocabulário."""
         self.path_words = path_words
         self.path_sounds = path_sounds
@@ -64,7 +65,7 @@ class Vocabulario:
         self.sounds = ler_fonemas(self.path_sounds)
 
 
-    def write_words(self):
+    def save_words(self):
         """Grava o vocabulário."""
 
         # Função que codifica o objetos WordTree para o formato JSON
@@ -105,9 +106,19 @@ class Vocabulario:
         print(self.sounds)
 
 
+    def print_parents(self):
+        """Exibe os ancestrais de uma palavra contida no vocabulário."""
+        word = input("Insira a palavra: ")
+        if not word in self.words.keys():
+            print("Essa palavra não existe.")
+        else:
+            wt = self.words[word]
+            wt.print_parents()
+        print()
+
+
     def add_primit(self):
         """Adiciona uma palavra primitiva ao vocabulário."""
-
         word = input("Insira a palavra: ")
         signif = input("Insira seu significado: ").split(", ")
         if word in self.words.keys():
@@ -119,7 +130,6 @@ class Vocabulario:
 
     def add_comp(self):
         """Adiciona uma palavra derivada de outras duas preexistentes no vocabulário."""
-
         parents = input("Insira as palavras-pai (na ordem da composição, separadas por espaço): ")
         signif = input("Insira o significado derivado: ").split(", ")
 
@@ -127,14 +137,16 @@ class Vocabulario:
         true_parents = [word for word in self.words if str(word) in sep_parents]
         comp = '-'.join(sep_parents)
 
-        if len(true_parents) == 2 and not comp in self.words.keys():
+        if len(true_parents) != 2:
+            print("Insira exatamente duas palavras para a composição.")
+        elif comp in self.words.keys():
+            print("Essa palavra já existe.")
+        else:
             new_word = WordTree(comp, signif, parents=true_parents)
             self.words[comp] = new_word
-        else:
-            print("Erro na composição.")
 
 
-    def del_word(self):
-        """Deleta uma palavra."""
+    def del_word(self):  # Não deletar uma palavra pai de outra!!! (deve-se impossibilitar isso.)
+        """Deleta uma palavra do vocabulário."""
         word = input("Insira a palavra a ser excluída: ")
         del self.words[word]

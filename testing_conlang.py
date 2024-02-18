@@ -1,46 +1,33 @@
 from vocabulario import Vocabulario
 
-
 if __name__ == "__main__":
     # Lê o vocabulário, definindo seu objeto
     vocabulario = Vocabulario("words.json", "sounds.txt")
 
     # Define os comandos possíveis
-    options = [
-        "1 - exibir vocabulário",
-        "2 - exibir fonemas",
-        "3 - adicionar palavra primitiva",
-        "4 - compor palavra derivada",
-        "5 - remover palavra",
-        "0 - sair"
-    ]
-
-    command_list = {
-        1: vocabulario.print_words,
-        2: vocabulario.print_fonemas,
-        3: vocabulario.add_primit,
-        4: vocabulario.add_comp,
-        5: vocabulario.del_word,
-        0: 0
-    }
+    filtro = lambda func: callable(getattr(vocabulario, func)) and not func.startswith("__")
+    commands = [func for func in dir(vocabulario) if filtro(func)]
+    commands = {**dict(zip(range(1, len(commands) + 1), commands)), 0: "exit"}
 
     # --- Loop de execução ---
     while True:
         # Exibe os comandos possíveis
-        print('\n', *options, '\n', sep='\n')
+        for k, v in commands.items():
+            print(f"{k} - {v}")
+        print()
 
         # Seleciona o comando a ser seguido
         try:
-            comando = command_list[int(input("Insira seu comando: "))]
+            comando = commands[int(input("Insira seu comando: "))]
             print()
             # Executa o comando
-            if comando == 0:
+            if comando == "exit":
                 break
             else:
-                comando()
-        except IndexError:
+                getattr(vocabulario, comando)()
+        except KeyError:
             # Em caso de erro, apenas printar na tela e retornar ao loop
             print("Comando inválido.")
 
     # Por fim grava o vocabulário
-    vocabulario.write_words()
+    vocabulario.save_words()
