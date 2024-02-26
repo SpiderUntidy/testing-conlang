@@ -59,6 +59,16 @@
             null
         ]
     },
+    "eshisa": {
+        "word": "eshisa",
+        "signif": [
+            "boca"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
     "fa": {
         "word": "fa",
         "signif": [
@@ -97,6 +107,26 @@
         "parents": [
             "fasi",
             "ka"
+        ]
+    },
+    "fasi-ka-rarure": {
+        "word": "fasi-ka-rarure",
+        "signif": [
+            "esquentar"
+        ],
+        "parents": [
+            "fasi-ka",
+            "rarure"
+        ]
+    },
+    "fasi-rarure": {
+        "word": "fasi-rarure",
+        "signif": [
+            "queimar"
+        ],
+        "parents": [
+            "fasi",
+            "rarure"
         ]
     },
     "fasi-shusa": {
@@ -145,8 +175,8 @@
             "pescar"
         ],
         "parents": [
-            "ripari",
-            "fusha-mekepa"
+            "fusha-mekepa",
+            "ripari"
         ]
     },
     "ime": {
@@ -180,6 +210,26 @@
             null
         ]
     },
+    "ka-rarure": {
+        "word": "ka-rarure",
+        "signif": [
+            "construir"
+        ],
+        "parents": [
+            "ka",
+            "rarure"
+        ]
+    },
+    "kake": {
+        "word": "kake",
+        "signif": [
+            "cabeça"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
     "kataka": {
         "word": "kataka",
         "signif": [
@@ -200,6 +250,16 @@
         "parents": [
             null,
             null
+        ]
+    },
+    "ki-ru": {
+        "word": "ki-ru",
+        "signif": [
+            "mostrar"
+        ],
+        "parents": [
+            "ki",
+            "ru"
         ]
     },
     "kimu": {
@@ -242,8 +302,18 @@
             "criança"
         ],
         "parents": [
-            "kimu",
-            "mani"
+            "mani",
+            "kimu"
+        ]
+    },
+    "mani-rarure": {
+        "word": "mani-rarure",
+        "signif": [
+            "nascer"
+        ],
+        "parents": [
+            "mani",
+            "rarure"
         ]
     },
     "mekepa": {
@@ -258,6 +328,16 @@
             null
         ]
     },
+    "mekepa-rarure": {
+        "word": "mekepa-rarure",
+        "signif": [
+            "comer"
+        ],
+        "parents": [
+            "mekepa",
+            "rarure"
+        ]
+    },
     "mene": {
         "word": "mene",
         "signif": [
@@ -266,6 +346,16 @@
         "parents": [
             null,
             null
+        ]
+    },
+    "mene-ru": {
+        "word": "mene-ru",
+        "signif": [
+            "colocar"
+        ],
+        "parents": [
+            "mene",
+            "ru"
         ]
     },
     "mu": {
@@ -286,6 +376,16 @@
         "parents": [
             null,
             null
+        ]
+    },
+    "na-ru": {
+        "word": "na-ru",
+        "signif": [
+            "convencer"
+        ],
+        "parents": [
+            "na",
+            "ru"
         ]
     },
     "pa": {
@@ -319,6 +419,16 @@
             null
         ]
     },
+    "rarure": {
+        "word": "rarure",
+        "signif": [
+            "fazer"
+        ],
+        "parents": [
+            null,
+            null
+        ]
+    },
     "ripari": {
         "word": "ripari",
         "signif": [
@@ -335,8 +445,8 @@
             "caçador"
         ],
         "parents": [
-            "kimu",
-            "ripari"
+            "ripari",
+            "kimu"
         ]
     },
     "ripari-pifi": {
@@ -347,18 +457,6 @@
         "parents": [
             "ripari",
             "pifi"
-        ]
-    },
-    "ritaki": {
-        "word": "ritaki",
-        "signif": [
-            "acabar",
-            "diminuir",
-            "morrer"
-        ],
-        "parents": [
-            null,
-            null
         ]
     },
     "ru": {
@@ -391,14 +489,34 @@
             null
         ]
     },
+    "she-ka": {
+        "word": "she-ka",
+        "signif": [
+            "luz"
+        ],
+        "parents": [
+            "ka",
+            "she"
+        ]
+    },
+    "she-ka-rarure": {
+        "word": "she-ka-rarure",
+        "signif": [
+            "iluminar"
+        ],
+        "parents": [
+            "rarure",
+            "she-ka"
+        ]
+    },
     "she-paka": {
         "word": "she-paka",
         "signif": [
             "bronzear"
         ],
         "parents": [
-            "paka",
-            "she"
+            "she",
+            "paka"
         ]
     },
     "shusa": {
@@ -421,14 +539,65 @@
             null
         ]
     },
+    "si-ka": {
+        "word": "si-ka",
+        "signif": [
+            "correnteza",
+            "movimento"
+        ],
+        "parents": [
+            "ka",
+            "si"
+        ]
+    },
+    "si-ka-rarure": {
+        "word": "si-ka-rarure",
+        "signif": [
+            "mover-se"
+        ],
+        "parents": [
+            "rarure",
+            "si-ka"
+        ]
+    },
+    "si-rarure": {
+        "word": "si-rarure",
+        "signif": [
+            "viver"
+        ],
+        "parents": [
+            "rarure",
+            "si"
+        ]
+    },
+    "si-rarure-pifi": {
+        "word": "si-rarure-pifi",
+        "signif": [
+            "vida"
+        ],
+        "parents": [
+            "pifi",
+            "si-rarure"
+        ]
+    },
+    "si-rarure-pifi-ka": {
+        "word": "si-rarure-pifi-ka",
+        "signif": [
+            "tempo"
+        ],
+        "parents": [
+            "ka",
+            "si-rarure-pifi"
+        ]
+    },
     "si-ripari": {
         "word": "si-ripari",
         "signif": [
             "pescar"
         ],
         "parents": [
-            "ripari",
-            "si"
+            "si",
+            "ripari"
         ]
     },
     "sufu": {
@@ -440,6 +609,28 @@
         "parents": [
             null,
             null
+        ]
+    },
+    "sufu-rarure": {
+        "word": "sufu-rarure",
+        "signif": [
+            "acabar",
+            "morrer"
+        ],
+        "parents": [
+            "rarure",
+            "sufu"
+        ]
+    },
+    "sufu-rarure-ru": {
+        "word": "sufu-rarure-ru",
+        "signif": [
+            "destruir",
+            "matar"
+        ],
+        "parents": [
+            "ru",
+            "sufu-rarure"
         ]
     },
     "ta": {
@@ -470,6 +661,16 @@
         "parents": [
             "tike",
             "shusa"
+        ]
+    },
+    "upuki": {
+        "word": "upuki",
+        "signif": [
+            "pé"
+        ],
+        "parents": [
+            null,
+            null
         ]
     }
 }

@@ -92,8 +92,36 @@ class Vocabulario:
                 print(f"Unexpected {err=}, {type(err)=}")
                 raise
 
+    
+    def _subcommand(self, command: str):
+        """Método para exibir opções de subcomando e em seguida executá-lo."""
 
-    def print_words(self):
+        # Define os subcomandos possíveis
+        filtro = lambda func: callable(getattr(self, func)) and func.startswith("_" + command)
+        subcommands = [func[1:] for func in dir(self) if filtro(func)]
+        subcommands = {**dict(zip(range(1, len(subcommands) + 1), subcommands)), 0: "retornar"}
+
+        # Exibe os subcomandos
+        for k, v in subcommands.items():
+            print(f"{k} - {v}")
+        print()
+        
+        # Seleciona o subcomando a ser seguido
+        try:
+            subcomando = subcommands[int(input("Insira seu comando: "))]
+            print()
+            # Executa o subcomando
+            if subcomando == "retornar":
+                return
+            else:
+                getattr(self, "_" + subcomando)()
+                print()
+        except (KeyError, ValueError):
+            # Caso insira subcomando que não exista, apenas printar na tela e retornar ao loop
+            print("Comando inválido.\n")
+
+
+    def _print_words(self):
         """Exibe as palavras do vocabulário."""
         print(f"\n{len(self.words)} palavras encontradas\n")
         for palavra in self.words.values():
@@ -101,12 +129,12 @@ class Vocabulario:
         print()
 
 
-    def print_fonemas(self):
+    def _print_fonemas(self):
         """Exibe os fonemas do vocabulário."""
         print(self.sounds)
 
 
-    def print_parents(self):
+    def _print_parents(self):
         """Exibe os ancestrais de uma palavra contida no vocabulário."""
         word = input("Insira a palavra: ")
         if not word in self.words.keys():
@@ -114,10 +142,14 @@ class Vocabulario:
         else:
             wt = self.words[word]
             wt.print_parents()
-        print()
 
 
-    def add_primit(self):
+    def print(self):
+        """Seleciona os subcomandos de exibição de informação sobre o vocabulário."""
+        self._subcommand("print")
+
+
+    def _add_primit(self):
         """Adiciona uma palavra primitiva ao vocabulário."""
         word = input("Insira a palavra: ")
         signif = input("Insira seu significado: ").split(", ")
@@ -128,7 +160,7 @@ class Vocabulario:
             self.words[word] = new_word
 
 
-    def add_comp(self):
+    def _add_comp(self):
         """Adiciona uma palavra derivada de outras duas preexistentes no vocabulário."""
         parents = input("Insira as palavras-pai (na ordem da composição, separadas por espaço): ")
         signif = input("Insira o significado derivado: ").split(", ")
@@ -144,6 +176,11 @@ class Vocabulario:
         else:
             new_word = WordTree(comp, signif, parents=true_parents)
             self.words[comp] = new_word
+
+
+    def add(self):
+        """Seleciona os subcomandos de adição de palavras ao vocabulário."""
+        self._subcommand("add")
 
 
     def del_word(self):  # Não deletar uma palavra pai de outra!!! (deve-se impossibilitar isso.)

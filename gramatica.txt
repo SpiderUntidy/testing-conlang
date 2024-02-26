@@ -27,7 +27,11 @@ kataka -> grande
 mene -> adjetivo -> preposição
 shasha -> muito -> plural
 
+mekepa -> -comida
+comida -> comer + -pifi
+
 -shusa -> lugar
 -kimu -> pessoa, agente
 -pifi -> objeto
 -ka -> substância
+-rarure -> "verbificador"

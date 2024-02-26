@@ -5,13 +5,13 @@ if __name__ == "__main__":
     vocabulario = Vocabulario("words.json", "sounds.txt")
 
     # Define os comandos possíveis
-    filtro = lambda func: callable(getattr(vocabulario, func)) and not func.startswith("__")
+    filtro = lambda func: callable(getattr(vocabulario, func)) and not func.startswith("_")
     commands = [func for func in dir(vocabulario) if filtro(func)]
     commands = {**dict(zip(range(1, len(commands) + 1), commands)), 0: "exit"}
 
     # --- Loop de execução ---
     while True:
-        # Exibe os comandos possíveis
+        # Exibe os comandos
         for k, v in commands.items():
             print(f"{k} - {v}")
         print()
@@ -25,9 +25,10 @@ if __name__ == "__main__":
                 break
             else:
                 getattr(vocabulario, comando)()
-        except KeyError:
-            # Em caso de erro, apenas printar na tela e retornar ao loop
-            print("Comando inválido.")
+                print()
+        except (KeyError, ValueError):
+            # Caso insira comando que não exista, apenas printar na tela e retornar ao loop
+            print("Comando inválido.\n")
 
     # Por fim grava o vocabulário
     vocabulario.save_words()

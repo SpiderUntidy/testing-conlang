@@ -1,6 +1,8 @@
 class WordTree:
     """Um tree node de palavras."""
+
     def __init__(self, word: str, signif: str, parents: tuple["WordTree", "WordTree"] = (None, None)):
+        """Define as propriedades definidoras da WordTree, mais as variáveis auxilares."""
         self.word = word
         self.signif = signif
         self.parents = parents
